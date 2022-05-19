@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6608BF66283339FF00475E13 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6608BF65283339FF00475E13 /* HomeTableViewController.swift */; };
+		660B17D7282E96180081F810 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660B17D6282E96180081F810 /* LoginViewController.swift */; };
 		662C5536282AB6F700958DF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C5535282AB6F700958DF3 /* AppDelegate.swift */; };
 		662C5538282AB6F700958DF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C5537282AB6F700958DF3 /* ViewController.swift */; };
 		662C553B282AB6F700958DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662C5539282AB6F700958DF3 /* Main.storyboard */; };
 		662C553D282AB6FC00958DF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 662C553C282AB6FC00958DF3 /* Assets.xcassets */; };
 		662C5540282AB6FC00958DF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 662C553E282AB6FC00958DF3 /* LaunchScreen.storyboard */; };
 		662C554B282AB6FD00958DF3 /* GushiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662C554A282AB6FD00958DF3 /* GushiTests.swift */; };
+		6669E5CB282D5E25004C82DB /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6669E5CA282D5E25004C82DB /* IntroViewController.swift */; };
+		667FC9FA282FFD4B00E6AC6B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667FC9F9282FFD4B00E6AC6B /* MyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6608BF65283339FF00475E13 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		660B17D6282E96180081F810 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		662C5532282AB6F700958DF3 /* Gushi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gushi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		662C5535282AB6F700958DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		662C5537282AB6F700958DF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		662C5546282AB6FD00958DF3 /* GushiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GushiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		662C554A282AB6FD00958DF3 /* GushiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GushiTests.swift; sourceTree = "<group>"; };
 		662C554C282AB6FD00958DF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6669E5CA282D5E25004C82DB /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		667FC9F9282FFD4B00E6AC6B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +85,11 @@
 		662C5534282AB6F700958DF3 /* Gushi */ = {
 			isa = PBXGroup;
 			children = (
+				6608BF65283339FF00475E13 /* HomeTableViewController.swift */,
+				667FC9F9282FFD4B00E6AC6B /* MyTabBarController.swift */,
 				662C5537282AB6F700958DF3 /* ViewController.swift */,
+				6669E5CA282D5E25004C82DB /* IntroViewController.swift */,
+				660B17D6282E96180081F810 /* LoginViewController.swift */,
 				662C5539282AB6F700958DF3 /* Main.storyboard */,
 				662C5541282AB6FC00958DF3 /* Info.plist */,
 				662C5555282AB72B00958DF3 /* System */,
@@ -205,8 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6608BF66283339FF00475E13 /* HomeTableViewController.swift in Sources */,
+				660B17D7282E96180081F810 /* LoginViewController.swift in Sources */,
+				6669E5CB282D5E25004C82DB /* IntroViewController.swift in Sources */,
 				662C5538282AB6F700958DF3 /* ViewController.swift in Sources */,
 				662C5536282AB6F700958DF3 /* AppDelegate.swift in Sources */,
+				667FC9FA282FFD4B00E6AC6B /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
