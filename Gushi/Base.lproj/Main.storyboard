@@ -243,6 +243,9 @@
                                 <state key="normal" title="Đăng nhập">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="SXG-I1-6a9" kind="showDetail" id="5qK-HE-CrT"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEr-nN-4jc">
                                 <rect key="frame" x="0.0" y="680" width="414" height="44.5"/>
@@ -294,7 +297,12 @@
                         <viewLayoutGuide key="safeArea" id="v1L-NV-yEl"/>
                     </view>
                     <navigationItem key="navigationItem" id="frB-kl-Bel">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="xbD-Ra-bVb"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" landscapeImage="back" largeContentSizeImage="back" id="xbD-Ra-bVb">
+                            <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="LoginCancel:" destination="LGy-1r-C19" id="6Iy-ie-LSj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLi-J0-mNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,10 +327,10 @@
             </objects>
             <point key="canvasLocation" x="1565" y="98"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="O2f-SW-9D2">
             <objects>
-                <viewController id="mCu-gt-pLs" customClass="UITableViewController" sceneMemberID="viewController">
+                <viewController id="mCu-gt-pLs" customClass="RegisterViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zCj-P6-REp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,6 +348,11 @@
                                 <state key="normal" title="Đăng ký">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnDangKy:" destination="mCu-gt-pLs" eventType="touchUpInside" id="A70-xT-F0Z"/>
+                                    <action selector="btnDangKyWithSender:" destination="mCu-gt-pLs" eventType="touchUpInside" id="ZRC-Kq-FUl"/>
+                                    <segue destination="LGy-1r-C19" kind="show" id="kIz-mX-SlT"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iWh-bj-Wo3">
                                 <rect key="frame" x="30" y="267" width="354" height="179.5"/>
@@ -474,6 +487,11 @@
                         <viewLayoutGuide key="safeArea" id="IkK-WT-ajM"/>
                     </view>
                     <navigationItem key="navigationItem" id="nXd-q5-sYS"/>
+                    <connections>
+                        <outlet property="txtMatKhau" destination="1Er-IW-1TU" id="9Rd-Ev-EKL"/>
+                        <outlet property="txtNhapLaiMatKhau" destination="YB3-D5-Grs" id="zUP-YQ-ApR"/>
+                        <outlet property="txtTaiKhoan" destination="eWj-75-Cvb" id="rnr-EQ-SBc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWO-DA-MWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -491,9 +509,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="a2A-28-9fc" kind="relationship" relationship="viewControllers" id="htl-dF-gnK"/>
-                        <segue destination="TSC-lN-Fxc" kind="relationship" relationship="viewControllers" id="HGO-Oc-upU"/>
-                        <segue destination="SU2-bS-mng" kind="relationship" relationship="viewControllers" id="T3D-UK-f03"/>
-                        <segue destination="1VG-46-Bog" kind="relationship" relationship="viewControllers" id="XOc-wa-MR8"/>
+                        <segue destination="8kQ-48-F08" kind="relationship" relationship="viewControllers" id="txJ-kO-qSs"/>
+                        <segue destination="kwv-IM-MOI" kind="relationship" relationship="viewControllers" id="tuy-Vx-2eF"/>
+                        <segue destination="lNp-GJ-3fN" kind="relationship" relationship="viewControllers" id="bfU-O5-QfQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yln-nA-9HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -697,27 +715,29 @@
             </objects>
             <point key="canvasLocation" x="1564" y="828"/>
         </scene>
-        <!--Post-->
-        <scene sceneID="lZA-v6-j4g">
+        <!--Item-->
+        <scene sceneID="dd8-Bo-yKE">
             <objects>
-                <navigationController id="TSC-lN-Fxc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="add" landscapeImage="add" largeContentSizeImage="add" selectedImage="add" id="RZV-ix-8zO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E29-k9-bsW">
+                <navigationController id="8kQ-48-F08" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="add" landscapeImage="add" largeContentSizeImage="add" selectedImage="add" id="chv-YM-ahU">
+                        <color key="badgeColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oj0-io-3jr">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="nLh-ec-KoR" kind="relationship" relationship="rootViewController" id="Qla-lz-25J"/>
+                        <segue destination="nLh-ec-KoR" kind="relationship" relationship="rootViewController" id="DzJ-9U-8J9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BJn-FA-BKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMT-o7-6c4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4154" y="808"/>
+            <point key="canvasLocation" x="4252" y="767"/>
         </scene>
         <!--Post-->
         <scene sceneID="q0N-i9-4rW">
             <objects>
-                <viewController id="nLh-ec-KoR" sceneMemberID="viewController">
+                <viewController id="nLh-ec-KoR" customClass="PostViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Rl-xc-XBS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -826,53 +846,19 @@
                         <viewLayoutGuide key="safeArea" id="Xgo-Av-XYX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Post" id="VY0-1X-qMu">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="kWb-Gp-2cz">
+                        <barButtonItem key="leftBarButtonItem" image="back" landscapeImage="back" largeContentSizeImage="back" id="kWb-Gp-2cz">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z0Y-r0-FSr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5078.2608695652179" y="806.91964285714278"/>
-        </scene>
-        <!--Notification-->
-        <scene sceneID="owY-j3-nIV">
-            <objects>
-                <navigationController id="SU2-bS-mng" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Notification" image="bell" landscapeImage="bell" largeContentSizeImage="bell" selectedImage="bell" id="m3T-N1-wnu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uyD-km-WqT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Ep5-Uh-8eH" kind="relationship" relationship="rootViewController" id="Mbn-P4-BXQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LMm-7N-Upf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4154" y="1530"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="EU5-m7-PJh">
-            <objects>
-                <navigationController id="1VG-46-Bog" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="user" landscapeImage="user" largeContentSizeImage="user" selectedImage="user" id="507-PX-kSU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OO0-sb-wgv">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="ipr-es-ZQs" kind="relationship" relationship="rootViewController" id="NaJ-Oz-wKF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="39E-62-utS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3352" y="1629"/>
+            <point key="canvasLocation" x="5026" y="806"/>
         </scene>
         <!--Notification-->
         <scene sceneID="dm3-cD-2iv">
             <objects>
-                <viewController id="Ep5-Uh-8eH" sceneMemberID="viewController">
+                <viewController id="Ep5-Uh-8eH" customClass="NotificationViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f8z-up-p9t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -969,7 +955,7 @@
                         <viewLayoutGuide key="safeArea" id="Wsf-RP-qNd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notification" id="Cd2-ap-5LQ">
-                        <barButtonItem key="leftBarButtonItem" title="notifi" image="back" id="TTl-zD-ijV">
+                        <barButtonItem key="leftBarButtonItem" title="notifi" image="back" landscapeImage="back" largeContentSizeImage="back" id="TTl-zD-ijV">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -988,12 +974,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="5076.811594202899" y="1528.7946428571429"/>
+            <point key="canvasLocation" x="5025" y="1560"/>
         </scene>
         <!--Profile-->
         <scene sceneID="e08-W3-u6w">
             <objects>
-                <viewController id="ipr-es-ZQs" sceneMemberID="viewController">
+                <viewController id="ipr-es-ZQs" customClass="ProfileViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lM3-FA-C0A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1092,7 +1078,7 @@
                         <viewLayoutGuide key="safeArea" id="niT-dh-j6a"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="4dH-cr-9HI">
-                        <barButtonItem key="leftBarButtonItem" title="profile" image="back" id="6rW-Ye-AGL">
+                        <barButtonItem key="leftBarButtonItem" title="profile" image="back" landscapeImage="back" largeContentSizeImage="back" id="6rW-Ye-AGL">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="setiing" id="DvZ-lF-d6s">
@@ -1105,12 +1091,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j0n-LJ-q2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4224.6376811594209" y="2366.5178571428569"/>
+            <point key="canvasLocation" x="3593" y="2159"/>
         </scene>
         <!--Setting-->
         <scene sceneID="CRW-cJ-yLn">
             <objects>
-                <viewController id="HYt-IB-yOj" sceneMemberID="viewController">
+                <viewController id="HYt-IB-yOj" customClass="SettingViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sn6-WQ-CuC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1298,7 +1284,7 @@
                         <viewLayoutGuide key="safeArea" id="DmR-UX-Vt2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Setting" id="gzJ-PM-5sA">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="DWo-OR-kOY">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" landscapeImage="back" largeContentSizeImage="back" id="DWo-OR-kOY">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1307,10 +1293,10 @@
             </objects>
             <point key="canvasLocation" x="6505.7971014492759" y="2371.875"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Name View Controller-->
         <scene sceneID="8lq-fM-Jwt">
             <objects>
-                <viewController id="aXx-d8-eb5" sceneMemberID="viewController">
+                <viewController id="aXx-d8-eb5" customClass="ChangeNameViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sEt-Df-98p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1443,7 +1429,7 @@
                         <viewLayoutGuide key="safeArea" id="aq0-r5-O3K"/>
                     </view>
                     <navigationItem key="navigationItem" id="myh-ef-eIg">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="tng-wr-lfa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" landscapeImage="back" largeContentSizeImage="back" id="tng-wr-lfa">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1524,10 +1510,10 @@
             </objects>
             <point key="canvasLocation" x="7311.594202898551" y="3267.8571428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Change Pass View Controller-->
         <scene sceneID="hTN-J2-yhn">
             <objects>
-                <viewController id="kX7-1c-dXM" sceneMemberID="viewController">
+                <viewController id="kX7-1c-dXM" customClass="ChangePassViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JoU-QQ-sAp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1680,7 +1666,7 @@
                         <viewLayoutGuide key="safeArea" id="Ytp-o9-Hpd"/>
                     </view>
                     <navigationItem key="navigationItem" id="kIT-2f-z8w">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="0ta-n0-iAo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" landscapeImage="back" largeContentSizeImage="back" id="0ta-n0-iAo">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1689,10 +1675,10 @@
             </objects>
             <point key="canvasLocation" x="8841" y="2569"/>
         </scene>
-        <!--View Controller-->
+        <!--Delete Account View Controller-->
         <scene sceneID="Yxs-ek-0Uy">
             <objects>
-                <viewController id="Gh5-PZ-Q6v" sceneMemberID="viewController">
+                <viewController id="Gh5-PZ-Q6v" customClass="DeleteAccountViewController" customModule="Gushi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g2U-gG-9jh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1721,7 +1707,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gBq-Ku-sgt">
                                 <rect key="frame" x="40" y="358.5" width="334" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">Bạn có chắc chắn muốn xoá tài khoản này? Việc này sẽ khiến cho tất cả các hoạt động của bạn trên tài khoản của bạn sẽ bị xoá bỏ, bao gồm tất cả các Paper bạn đã đăng, các thiết lập bạn đã chọn và đặc biệt bạn sẽ vĩnh viễn không thể khôi phục tài khoản được.</mutableString>
+                                <string key="text">Bạn có chắc chắn muốn xoá tài khoản này? Việc này sẽ khiến cho tất cả các hoạt động của bạn trên tài khoản của bạn sẽ bị xoá bỏ, bao gồm tất cả các Paper bạn đã đăng, các thiết lập bạn đã chọn và đặc biệt bạn sẽ vĩnh viễn không thể khôi phục tài khoản được.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1815,7 +1801,7 @@
                         <viewLayoutGuide key="safeArea" id="ZAA-Ud-DIZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="LPf-bw-GYy">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="1ue-nX-q6j">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" landscapeImage="back" largeContentSizeImage="back" id="1ue-nX-q6j">
                             <color key="tintColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
@@ -1823,6 +1809,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Tq-ec-0p2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8415.9420289855079" y="3267.8571428571427"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="jog-SI-e3V">
+            <objects>
+                <navigationController id="kwv-IM-MOI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="bell" landscapeImage="bell" largeContentSizeImage="bell" selectedImage="bell" id="Wvt-G1-Lue">
+                        <color key="badgeColor" red="0.0" green="0.71247356989999999" blue="0.72606678300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zFr-ll-FJL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ep5-Uh-8eH" kind="relationship" relationship="rootViewController" id="vpN-vV-CcT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pX1-Iu-GGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4149" y="1523"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="gb2-9o-uO6">
+            <objects>
+                <navigationController id="lNp-GJ-3fN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="user" landscapeImage="user" largeContentSizeImage="user" selectedImage="user" id="rTi-j5-0Wd"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="35L-BH-4dl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ipr-es-ZQs" kind="relationship" relationship="rootViewController" id="jKF-Ct-Rjm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gf5-cF-gBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3374" y="1442"/>
         </scene>
     </scenes>
     <resources>
@@ -1847,4 +1869,7 @@
         <image name="small2" width="100" height="100"/>
         <image name="user" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kIz-mX-SlT"/>
+    </inferredMetricsTieBreakers>
 </document>

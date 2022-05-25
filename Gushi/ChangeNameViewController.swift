@@ -1,14 +1,14 @@
 //
-//  LoginViewController.swift
+//  ChangeNameViewController.swift
 //  Gushi
 //
-//  Created by CNTT on 5/13/22.
+//  Created by CNTT on 5/20/22.
 //  Copyright © 2022 fit.tdc. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class ChangeNameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +17,6 @@ class LoginViewController: UIViewController {
     }
     
 
-    @IBAction func LoginCancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
     /*
     // MARK: - Navigation
 
